@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fastify API",
+    "description": "Description",
+    "version": "0.1.0"
+  },
+  "components": {
+    "schemas": {}
+  },
+  "paths": {
+    "/api/professores/horas": {
+      "get": {
+        "operationId": "getSchedule",
+        "tags": [
+          "Professores"
+        ],
+        "description": "Get Professors Schedule",
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "professor_id": {
+                            "type": "number"
+                          },
+                          "professor_name": {
+                            "type": "string"
+                          },
+                          "total_hours": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "professor_id",
+                          "professor_name",
+                          "total_hours"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "count"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/salas/horarios": {
+      "get": {
+        "operationId": "getSchedule",
+        "tags": [
+          "Salas"
+        ],
+        "description": "Get Rooms Schedule",
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "room_id": {
+                            "type": "number"
+                          },
+                          "room_name": {
+                            "type": "string"
+                          },
+                          "day_of_week": {
+                            "type": "number",
+                            "minimum": 1,
+                            "maximum": 7
+                          },
+                          "horas_ocupadas": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "horas_livres": {
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        },
+                        "required": [
+                          "room_id",
+                          "room_name",
+                          "day_of_week",
+                          "horas_ocupadas",
+                          "horas_livres"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "count"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

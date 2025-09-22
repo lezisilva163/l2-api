@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  l2-api-pg:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=l2-api
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
