@@ -1,13 +1,41 @@
-version: "3.8"
+version: "3.9"
 
 services:
   l2-api-pg:
     image: bitnami/postgresql
+    container_name: l2-api-pg
     environment:
       - POSTGRESQL_USERNAME=docker
       - POSTGRESQL_PASSWORD=docker
       - POSTGRESQL_DATABASE=l2-api
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - l2-api-network
+
+  l2-api:
+    build: .
+    container_name: l2-api
+    ports:
+      - "3333:3333"
+    environment:
+      - PORT=3333
+      - PGHOST=l2-api-pg
+      - PGUSER=docker
+      - PGPASSWORD=docker
+      - PGDATABASE=l2-api
+      - PGPORT=5432
+    depends_on:
+      - l2-api-pg
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+    networks:
+      - l2-api-network
+
+networks:
+  l2-api-network:
+    driver: bridge

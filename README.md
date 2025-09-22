@@ -2,10 +2,11 @@
 
 ## Descrição
 
-Este projeto é uma API desenvolvida em TypeScript. Ele utiliza Docker Compose para facilitar o desenvolvimento e a execução da aplicação.
+Este projeto é uma API desenvolvida em TypeScript. Ele utiliza Docker e Docker Compose para facilitar o desenvolvimento e a execução da aplicação.
 
 ## Pré-requisitos
 
+- Docker
 - Docker Compose
 
 ## Como Rodar a Aplicação
@@ -22,7 +23,7 @@ Este projeto é uma API desenvolvida em TypeScript. Ele utiliza Docker Compose p
 
    docker-compose up --build
 
-4. A aplicação estará disponível em `http://localhost:3000` (ou na porta configurada no seu `docker-compose.yml`).
+4. A aplicação estará disponível em `http://localhost:3333` (ou na porta configurada no seu `docker-compose.yml`).
 
 ## Estrutura do Projeto
 
