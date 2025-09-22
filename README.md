@@ -12,7 +12,7 @@ Este projeto é uma API desenvolvida em TypeScript. Ele utiliza Docker Compose p
 
 1. Clone o repositório:
 
-   git clone <URL_DO_REPOSITORIO>
+   git clone [<URL_DO_REPOSITORIO>](https://github.com/lezisilva163/l2-api.git)
 
 2. Navegue até o diretório do projeto:
 
