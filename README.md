@@ -24,14 +24,3 @@ Este projeto é uma API desenvolvida em TypeScript. Ele utiliza Docker e Docker 
    docker-compose up --build
 
 4. A aplicação estará disponível em `http://localhost:3333` (ou na porta configurada no seu `docker-compose.yml`).
-
-## Estrutura do Projeto
-
-- `src/`: Contém o código-fonte da aplicação.
-- `package.json`: Gerencia as dependências e scripts do projeto.
-- `tsconfig.json`: Configurações do TypeScript.
-- `README.md`: Documentação do projeto.
-
-## Contribuição
-
-Sinta-se à vontade para contribuir com melhorias e correções. Faça um fork do repositório e envie um pull request com suas alterações.
